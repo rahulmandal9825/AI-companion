@@ -29,7 +29,7 @@ export default function RootLayout({
     return (
         <ClerkProvider>
             <html lang="en" suppressHydrationWarning>
-                <body className={`${geistSans.variable} ${geistMono.variable} bg-secondary antialiased`}>
+                <body className={`${geistSans.variable} ${geistMono.variable} bg-secondary h-full antialiased`}>
                   <ThemeProvider
                   attribute="class"
                   defaultTheme="system"
@@ -39,7 +39,7 @@ export default function RootLayout({
                     {children}
                     <Toaster/>
                   </ThemeProvider>
-                    
+
                 </body>
             </html>
         </ClerkProvider>

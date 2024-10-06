@@ -4,7 +4,7 @@ import { Companion, Message } from '@prisma/client'
 import { ChevronLeft, Edit, MoreHorizontal, MoreVertical, Trash } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import React from 'react'
-import BotAvatar from './BotAvatar';
+import BotAvatar from '../../../../../../components/BotAvatar';
 import { useUser } from '@clerk/nextjs';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { useToast } from '@/hooks/use-toast';
@@ -26,7 +26,7 @@ const ChatHeader = ({companion}:ChatHeaderProps) => {
 
     const onDelete = async() =>{
         try {
-            await axios.delete(`/api/companions/${companion.id}`)
+            await axios.delete(`/api/companion/${companion.id}`)
             toast({
                 description:"Success "
             })

@@ -37,11 +37,11 @@ const ChatIdpage = async ({params}: ChatIdPageProps) => {
         return redirect("/");
     }
 
-  return (
-    <div>
-        <ChatClient companion={companion} />
-    </div>
+  return(
+
+ <ChatClient companion={companion} />
+
   )
 }
 
-export default ChatIdpage
+export default ChatIdpage;

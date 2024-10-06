@@ -46,7 +46,7 @@ export async function PATCH(req: Request,{params}:{params:{comanionId: string}} 
 }
 
 export async function DELETE(req: Request,
-    {params}: {params:{CompanionId:string}}
+    {params}: {params:{companionId:string}}
 ) {
     try {
         const { userId } = auth()
@@ -55,7 +55,7 @@ export async function DELETE(req: Request,
             const companion = await prismadb.companion.delete({
                 where:{
                     userId,
-                    id: params.CompanionId
+                    id: params.companionId
                 }
             })
             return NextResponse.json(companion);
