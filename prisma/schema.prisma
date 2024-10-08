@@ -44,7 +44,7 @@ model Companion {
 
 
 enum Role{
- userI
+ user
  system
 }
 
