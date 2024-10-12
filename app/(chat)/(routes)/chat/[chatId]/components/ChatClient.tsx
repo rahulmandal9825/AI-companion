@@ -29,6 +29,7 @@ const ChatClient = ({companion}: ChatClientprops) => {
   } = useCompletion({
     api:`/api/chat/${companion.id}`,
     onFinish(prompt, completion) {
+
         const systemMessage: ChatMessagePorps = {
           role: "system",
           content: completion,
@@ -36,10 +37,12 @@ const ChatClient = ({companion}: ChatClientprops) => {
 
         setMessages((current) => [...current, systemMessage ])
         setInput("");
+        
+        router.refresh();
 
-        router.refresh()
     },
   })
+
 
   const onSubmit = (e: FormEvent<HTMLFormElement>) =>{
     const userMessage: ChatMessagePorps = {
@@ -61,10 +64,10 @@ const ChatClient = ({companion}: ChatClientprops) => {
         messages={messages}
         />
         <ChatForm
-        isLoading={isLoading}
-        input={input}
-        handleInputChange={handleInputChange}
-        onSubmit={onSubmit}
+          isLoading={isLoading}
+          input={input}
+          handleInputChange={handleInputChange}
+          onSubmit={onSubmit}
         />
     </div>
   )

@@ -9,6 +9,7 @@ interface ChatMessagesProps {
 }
 
 const ChatMessages = ({messages, isLoading, companion}: ChatMessagesProps) => {
+
   const [fakeLoading , setFakeLoading] = useState(messages.length === 0 ? true: false)
 
   const scrollRef = useRef<ElementRef<"div">>(null);
@@ -39,10 +40,10 @@ const ChatMessages = ({messages, isLoading, companion}: ChatMessagesProps) => {
             /> 
            {messages.map((message) =>(
             <ChatMessage 
-            key={message.content}
+            key={message.src}
             role={message.role}
             content={message.content}
-            src={message.src}
+            src={companion.src}
             />
            ))}
            {isLoading && (

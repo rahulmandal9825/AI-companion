@@ -1,4 +1,4 @@
-import BotAvatar from '@/components/BotAvatar';
+
 import { useToast } from '@/hooks/use-toast';
 import { cn } from '@/lib/utils';
 import { useTheme } from 'next-themes';
@@ -7,6 +7,7 @@ import { BeatLoader } from "react-spinners";
 import UserAvatar from './BotAvataruser';
 import { Button } from './ui/button';
 import { Copy } from 'lucide-react';
+import BotAvatar from './BotAvatar';
 
 export interface ChatMessagePorps{
 role: "system" | "user";
@@ -43,7 +44,7 @@ const ChatMessage = ({
     )}>
       {role !=="user" && src && <BotAvatar src={src} />}
       <div className=' rounded-md px-4 py-2 max-w-sm text-base font-medium bg-primary/10'>
-      {isLoading ? <BeatLoader size={4} color={theme === "light" ? "black": "white"}/>: content}
+      {isLoading ? (<BeatLoader size={4} color={theme === "light" ? "black": "white"}/>) : (content)}
 
       </div>
       {role === "user" && <UserAvatar/>}
