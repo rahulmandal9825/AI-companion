@@ -1,14 +1,15 @@
 "use client";
 import { Button } from '@/components/ui/button';
 import { Companion, Message } from '@prisma/client'
-import { ChevronLeft, Edit, MoreHorizontal, MoreVertical, Trash } from 'lucide-react';
+import { ChevronLeft, Edit, MoreVertical, Trash } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import React from 'react'
-import BotAvatar from '../../../../../../components/BotAvatar';
+
 import { useUser } from '@clerk/nextjs';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { useToast } from '@/hooks/use-toast';
 import axios from 'axios';
+import BotAvatar from '@/components/BotAvatar';
 
 
 interface ChatHeaderProps{
